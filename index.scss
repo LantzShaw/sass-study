@@ -1,0 +1,134 @@
+.box {
+    width: 100px;
+}
+
+// 该注释不会被编译
+
+/*
+    该注释会被编译
+*/
+
+$number: 100px;
+$i: 1;
+$key: margin;
+.box#{i} {
+    #{$key}: $number;
+}
+
+ul {
+    width: 100%;
+    li {
+        color: red;
+        p {
+            padding: 10px;
+        }
+    }
+    p {
+        white-space: normal;
+        // s属性嵌套
+        font: {
+            size: 10px;
+            family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+    }
+    // &，不叫代表子元素的houver
+    &:hover {
+        color: #fff;
+    }
+}
+
+$number2: 100px;
+.box3 {
+    width: $number2 * 3;
+    height: $number2 + 10;
+    margin: $number2 + 10px;
+    height: $number2 + 10px;
+    font: 20px / 100;
+    padding: 20px / 100;
+    padding: (20px / 100) // margin: $number2 + 10em;
+    // font-size: 10em + $number2;
+}
+
+@function add($a, $b) {
+    @return $a+$b;
+}
+
+.box4 {
+    width: round(0.5);
+    padding: percentage(0.4);
+    height: sqrt(25%);
+    margin: random();
+    font-size: add(2px, 3px);
+}
+
+@mixin show {
+    display: block;
+}
+
+@mixin hide($color) {
+    color: $color;
+}
+
+.box5 {
+    width: 100%;
+    @include show;
+    @include hide(#f40)
+}
+
+// 通过继承  分组
+// .line {
+//     display: inline;
+// }
+// 通过%占位符，这样就不会生成.line的样式
+%line {
+    display: inline;
+}
+
+.box7 {
+    @extend %line;
+}
+
+.box8 {
+    @extend %line;
+}
+
+$background: ( a: url(1.png), b: url(2.png));
+$transform: ( a: scale(1), b: rotate(90deg));
+.box9 {
+    background: map-values($background);
+    // 设置空格
+    transform: zip(map-values($transform)...);
+}
+
+// 媒体查询
+.box10 {
+    width: 100px;
+    @media (min-width: 768px) {
+        width: 500px;
+    }
+    @media (min-width: 992px) {
+        width: 900px;
+    }
+    @media (min-width: 1200px) {
+        width: 1400px;
+    }
+}
+
+$count: 4;
+.box11 {
+    @if($count > 10) {
+        width: 100%;
+    }
+    @else {
+        width: 10px * $count;
+    }
+}
+
+// 循环
+@for $i from 0 through 2 {
+    .box-#{$i} {
+        width: 10px + $i;
+    }
+}
+
+@import './common.scss';

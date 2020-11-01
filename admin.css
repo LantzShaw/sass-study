@@ -1,0 +1,103 @@
+.box {
+  width: 100%;
+}
+.box {
+  width: 100px;
+}
+.box1 {
+  margin: 100px;
+}
+ul {
+  width: 100px;
+}
+ul li {
+  width: 100px;
+}
+ul li p {
+  width: 100px;
+}
+ul p {
+  color: #f40;
+}
+ul:hover {
+  color: #fff;
+}
+div {
+  width: 200px;
+  height: 200px;
+}
+span {
+  height: 10000px;
+  width: 200px;
+  font-size: 110em;
+  font: 20px / 11;
+  padding: 5px;
+  padding: 12 / 3;
+  color: #ff8800;
+}
+.box4 {
+  height: 1;
+  width: 100%;
+  padding: 5%;
+  margin: random();
+}
+.show {
+  display: block;
+}
+.box5 {
+  width: 100%;
+  display: block;
+  background: url(1.png), url(2.pnd);
+  transform: scale(1) rotate(90deg);
+  display: none;
+  color: #f40;
+}
+.box6 {
+  display: inline-block;
+}
+.line,
+.box7,
+.box8 {
+  display: inline;
+}
+.show {
+  background: url(1.png), url(2.pnd);
+  transform: scale(1) rotate(90deg);
+}
+.box10 {
+  width: 100px;
+}
+@media all and (minwidth: 768px) {
+  .box10 {
+    width: 600px;
+  }
+}
+@media all and (minwidth: 992px) {
+  .box10 {
+    width: 900px;
+  }
+}
+@media all and (minwidth: 1200px) {
+  .box10 {
+    width: 1400px;
+  }
+}
+.box11 {
+  width: 1400px;
+}
+.box12 {
+  width: 100px;
+}
+.box-2 {
+  width: 102px;
+}
+.box-1 {
+  width: 101px;
+}
+.box-0 {
+  width: 100px;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
